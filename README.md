@@ -37,43 +37,61 @@ and adding a seed script to easily load demo data.
 - RESTful API connecting the frontend and backend
 
 ## Architecture
-- The Angular Admin side of the application authenticates users to manage trip data
+- The Angular Admin-side of the application authenticates users to manage trip data
 - The Express API handles authentication and database operations
 - The MongoDB database stores users and trip data across sessions
-- The public facing site renders trip data using the handlebars format
+- The public-facing site renders trip data using the handlebars format
+
 This setup was chosen to become familiarized with this tech-stack and demonstrate 
 real-world admin-controlled content management with a client-side view.
 
 ## Setup
-**Clone repository using git and move to the project folder**
-- git clone https://github.com/billycook71/cs465-fullstack.git
-- cd ../cs465-fullstack
+**1. Clone repository using git and move to the project folder**
+```bash
+git clone https://github.com/billycook71/cs465-fullstack.git
+cd ../cs465-fullstack
+```
 
-**Install dependencies**
-- npm install
-- cd app_admin
-- npm install
-- cd ..
+**2. Install dependencies**
+```bash
+npm install
+cd app_admin
+npm install
+cd ..
+```
 
-**configure environment variables**
+**3. Configure environment variables**
 - create a .env file in the root directory (not included due to git.ignore)
 - example: JWT_SECRET=supersecretkey123
 
-**Ensure MongoDB is installed & running**
+**4. Ensure MongoDB is installed & running**
 
-**Seed the databse (seeds some sample trips and an admin login)**
-- npm run seed
-- npm run seed -- --reset (also included if you need to scrub some existing data to run, just removes existing trips * admin logins)
+**5. Seed the databse (seeds some sample trips and an admin login)**
+```bash
+npm run seed
+```
+(reset included if you need to scrub some existing data to run, just removes existing trips & admin logins)
+```bash
+npm run seed -- --reset 
+```
 
-**Run the application**
-- npm start
-- cd app_admin
-- npm start
+**6. Run the application**
+```bash
+npm start
+cd app_admin
+npm start
+```
+
 (this starts the backend and frontend, both need to be running)
 
-**Accessing the app**
-- In your browser paste the client-side: http://localhost:3000
-- In your browser paste the admin-side: http://localhost:4200
+**7. Accessing the app**
+- Public site: http://localhost:3000
+- Admin dashboard: http://localhost:4200
+
+*Seeded login credentials:*   
+- name: Demo Admin
+- email: admin@example.com
+- password: Password123!
 
 ## Future Improvmeents
 - Improve API validation and error handling
